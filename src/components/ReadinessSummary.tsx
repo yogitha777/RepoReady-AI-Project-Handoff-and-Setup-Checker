@@ -152,7 +152,7 @@ export const ReadinessSummary: React.FC<ReadinessSummaryProps> = ({
               className="btn btn-outline btn-xs demo-compare-btn"
               title="Toggle between prepared baseline and remediated demonstration samples"
             >
-              <span>{isComparisonActive ? 'View Baseline Sample (38 pts)' : 'View Remediated Sample (96 pts)'}</span>
+              <span>{isComparisonActive ? 'View Baseline Sample (24 pts)' : 'View Remediated Sample (100 pts)'}</span>
               <ArrowRight size={13} />
             </button>
           </div>

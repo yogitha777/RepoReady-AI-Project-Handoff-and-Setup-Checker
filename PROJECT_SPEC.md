@@ -16,10 +16,10 @@ Existing linters check code syntax and formatting (ESLint, Prettier, Ruff), and 
 ## 2. Product Differentiation
 RepoReady is **NOT** a general-purpose chat assistant. Its core differentiation is a structured, repeatable developer workflow:
 1. **Deterministic Cross-Manifest Inspection**: Rigorously cross-checks README commands against `package.json` scripts, `requirements.txt` dependencies, and `.env.example` variables.
-2. **Transparent, Explainable 0–100 Heuristic Scoring**: 4-tier severity deductions (`critical`: -12, `high`: -8, `medium`: -5, `low`: -2) clamped strictly between 0 and 100.
+2. **Transparent, Explainable 0–100 Heuristic Scoring**: 4-tier severity deductions (`critical`: -12, `high`: -8, `medium`: -5, `low`: -2) bounded to the range 0–100, inclusive.
 3. **Interactive Issue Tracking Workflow**: Supports tracking findings as `Open`, `In Progress`, or `Resolved`, clearly distinguishing user-reported remediation from automated re-checks.
 4. **Server-Side AI Issue Explainer with Safe Deterministic Fallback**: Integrates Google Gemini (`gemini-1.5-flash`) and OpenAI (`gpt-4o-mini`) via Vite server middleware with secret sanitization. If no API key is configured, RepoReady transparently operates offline using a grounded 4-field deterministic guidance engine.
-5. **Instant Before-vs-After Remediation Demo**: One-click toggle between an un-audited repository (38/100, multiple blockers) and its remediated counterpart (96/100, 0 critical issues) for instant evaluation.
+5. **Instant Before-vs-After Remediation Demo**: One-click toggle between an un-audited repository (24/100, 4 critical blockers) and its remediated counterpart (100/100, 0 critical issues) for instant evaluation.
 6. **Standardized Markdown Handoff Export**: Exports comprehensive `RepoReady-Report-<project>.md` for pull request attachments and team handoffs.
 
 ---
@@ -56,7 +56,7 @@ RepoReady is **NOT** a general-purpose chat assistant. Its core differentiation 
 
 | ID | Requirement | Description | Status |
 |---|---|---|---|
-| **FR-01** | Multi-Scenario Demo Loader | Select from 4 pre-built scenarios including Before (38 pts) vs After (96 pts) comparison. | Implemented & Tested |
+| **FR-01** | Multi-Scenario Demo Loader | Select from 4 pre-built scenarios including Before (24 pts) vs After (100 pts) comparison. | Implemented & Tested |
 | **FR-02** | Multi-File Input & Routing | Paste text or drag & drop files into browser; automatic name-based routing. | Implemented & Tested |
 | **FR-03** | Honest File State Tracking | Distinguishes provided files, unprovided files, and confirmed missing files. | Implemented & Tested |
 | **FR-04** | Cross-Manifest Rule Engine | Scans 18 deterministic rules across 6 categories with finding deduplication. | Implemented & Tested |

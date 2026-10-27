@@ -95,13 +95,13 @@ export const App: React.FC = () => {
       handleSelectSample('sample-express-remediated');
       setIsComparisonActive(true);
       showToast(
-        'Loaded Remediated Demo Sample (96/100): Prepared sample demonstrating remediated documentation.'
+        'Loaded Remediated Demo Sample (100/100): Prepared sample demonstrating remediated documentation.'
       );
     } else {
       handleSelectSample('sample-express-broken');
       setIsComparisonActive(false);
       showToast(
-        'Loaded Baseline Demo Sample (38/100): Prepared sample demonstrating common setup roadblocks.'
+        'Loaded Baseline Demo Sample (24/100): Prepared sample demonstrating common setup roadblocks.'
       );
     }
   };

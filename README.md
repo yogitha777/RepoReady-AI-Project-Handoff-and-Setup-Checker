@@ -12,10 +12,10 @@ General-purpose AI chat assistants can read code and offer free-form commentary,
 
 **RepoReady's differentiation:**
 1. **Deterministic Cross-Manifest Inspection**: Rigorously cross-checks README commands against `package.json` scripts, `requirements.txt` dependencies, and `.env.example` variables.
-2. **Transparent, Explainable 0–100 Heuristic Scoring**: Documented 4-tier severity deductions (`critical`: -12, `high`: -8, `medium`: -5, `low`: -2) clamped strictly between 0 and 100.
+2. **Transparent, Explainable 0–100 Heuristic Scoring**: Documented 4-tier severity deductions (`critical`: -12, `high`: -8, `medium`: -5, `low`: -2) bounded to the range 0–100, inclusive.
 3. **Interactive Issue Tracking Workflow**: Supports tracking findings as `Open`, `In Progress`, or `Resolved (Self-Reported)`, clearly distinguishing user-reported remediation from technical verification on re-analysis.
 4. **Server-Side AI Issue Explainer with Graceful Deterministic Fallback**: Integrates Google Gemini (`gemini-1.5-flash`) and OpenAI (`gpt-4o-mini`) via Vite server middleware with secret sanitization. If no API key is configured or when hosted in static environments, RepoReady transparently operates offline using a grounded 4-field deterministic guidance engine.
-5. **Instant Demonstration Scenarios**: One-click toggle between an un-audited baseline sample (38/100, multiple blockers) and its remediated counterpart (96/100, 0 critical issues) for instant evaluation.
+5. **Instant Demonstration Scenarios**: One-click toggle between an un-audited baseline sample (24/100, multiple blockers) and its remediated counterpart (100/100, 0 critical issues) for instant evaluation.
 6. **Standardized Markdown Handoff Export**: Exports comprehensive `RepoReady-Report-<project>.md` for pull request attachments and team handoffs.
 
 ---
@@ -23,10 +23,10 @@ General-purpose AI chat assistants can read code and offer free-form commentary,
 ## 🚀 Key Features
 
 1. **Four Demonstration Scenarios**:
-   - **[Demo Sample] TaskTrack API — Baseline (With Gaps)**: Represents an un-audited submission with missing install/start commands, runtime prerequisites, undocumented environment variables, exposed secret leak, and stub test script (Score: 38/100, Grade: Severe Gaps).
-   - **[Demo Sample] TaskTrack API — Remediated Setup Documentation**: The exact same repository remediated with RepoReady suggested fixes, pinned dependencies, engine constraints, and test suite (Score: 96/100, Grade: Handoff Ready).
-   - **[Demo Sample] InsightAI Service (FastAPI & SQLAlchemy)**: Python data microservice with unpinned requirements, missing virtualenv setup guide, and zero test instructions (Score: 68/100, Grade: Needs Review).
-   - **[Demo Sample] CloudSync Engine (TypeScript Production Service)**: Gold-standard microservice documentation (Score: 97/100, Grade: Handoff Ready).
+   - **[Demo Sample] TaskTrack API — Baseline (With Gaps)**: Represents an un-audited submission with missing install/start commands, runtime prerequisites, undocumented environment variables, exposed secret leaks, and stub test script (Score: 24/100, Grade: Severe Gaps).
+   - **[Demo Sample] TaskTrack API — Remediated Setup Documentation**: The exact same repository remediated with RepoReady suggested fixes, pinned dependencies, engine constraints, and test suite (Score: 100/100, Grade: Handoff Ready).
+   - **[Demo Sample] InsightAI Service (FastAPI & SQLAlchemy)**: Python data microservice with unpinned requirements, missing virtualenv setup guide, and zero test instructions (Score: 71/100, Grade: Needs Review).
+   - **[Demo Sample] PulseFlow Platform (TypeScript & Fastify)**: Gold-standard production service documentation (Score: 92/100, Grade: Handoff Ready).
 2. **Multi-Input Flexibility**:
    - Tabbed editors for direct pasting.
    - Multi-file drag-and-drop / file picker with automatic file-name routing.
